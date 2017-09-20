@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <title>Page Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#pass').keyup(function() {//user jokhon key press korbe tokhon action perform hobe
+            var len;
+            len = $('#pass').val().length;//user je password ta dibe tar length ta ekhane calculate hobe
+            //$('.first').text(len);
+            if (len < 1) {
+                $('first').text('');
+                $('first').remove();
+            } else if (len <= 4) {
+                $('.first').text('weak');
+            } else if (len <= 8) {
+                $('.first').text('good');
+            } else {
+                $('.first').text('very strong');
+            }
+        });
+        $('#pass').keydown(function() {
+            var len;
+            len = $('#pass').val().length;
+            //$('.first').text(len);
+            if (len < 1) {
+                $('first').text('');
+                
+            } else if (len <= 4) {
+                $('.first').text('');
+            } else if (len <= 8) {
+                $('.first').text('');
+            } else {
+                $('.first').text('');
+            }
+        });
+    });
+
+</script>
+
+<body>
+    <input type="password" id="pass">
+    <span class="first"></span>
+
+</body>
+
+</html>
